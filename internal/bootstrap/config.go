@@ -78,10 +78,10 @@ func InitConfig() {
 		}
 		conf.Conf.TempDir = absPath
 	}
-	err := os.MkdirAll(conf.Conf.TempDir, 0o777)
-	if err != nil {
-		log.Fatalf("create temp dir error: %+v", err)
-	}
+	// err = os.MkdirAll(conf.Conf.TempDir, 0o777)
+	// if err != nil {
+	// 	log.Fatalf("create temp dir error: %+v", err)
+	// }
 	log.Debugf("config: %+v", conf.Conf)
 	base.InitClient()
 	initURL()
