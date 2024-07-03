@@ -68,14 +68,14 @@ func InitConfig() {
 		}
 		conf.Conf.TempDir = absPath
 	}
-	err := os.RemoveAll(filepath.Join(conf.Conf.TempDir))
-	if err != nil {
-		log.Errorln("failed delete temp file:", err)
-	}
-	err = os.MkdirAll(conf.Conf.TempDir, 0o777)
-	if err != nil {
-		log.Fatalf("create temp dir error: %+v", err)
-	}
+	// err := os.RemoveAll(filepath.Join(conf.Conf.TempDir))
+	// if err != nil {
+	// 	log.Errorln("failed delete temp file:", err)
+	// }
+	// err = os.MkdirAll(conf.Conf.TempDir, 0o777)
+	// if err != nil {
+	// 	log.Fatalf("create temp dir error: %+v", err)
+	// }
 	log.Debugf("config: %+v", conf.Conf)
 	base.InitClient()
 	initURL()
