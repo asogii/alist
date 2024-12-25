@@ -58,7 +58,7 @@ English | [中文](./README_cn.md)| [日本語](./README_ja.md) | [Contributing]
     - [x] WebDav(Support OneDrive/SharePoint without API)
     - [x] Teambition([China](https://www.teambition.com/ ),[International](https://us.teambition.com/ ))
     - [x] [Mediatrack](https://www.mediatrack.cn/)
-    - [x] [139yun](https://yun.139.com/) (Personal, Family)
+    - [x] [139yun](https://yun.139.com/) (Personal, Family, Group)
     - [x] [YandexDisk](https://disk.yandex.com/)
     - [x] [BaiduNetdisk](http://pan.baidu.com/)
     - [x] [Terabox](https://www.terabox.com/main)
@@ -98,7 +98,7 @@ English | [中文](./README_cn.md)| [日本語](./README_ja.md) | [Contributing]
 
 ## Document
 
-<https://alist.nn.ci/>
+<https://alistgo.com/>
 
 ## Demo
 
@@ -117,7 +117,7 @@ https://alist.nn.ci/guide/sponsor.html
 
 - [VidHub](https://apps.apple.com/app/apple-store/id1659622164?pt=118612019&ct=alist&mt=8) - An elegant cloud video player within the Apple ecosystem. Support for iPhone, iPad, Mac, and Apple TV.
 - [亚洲云](https://www.asiayun.com/aff/QQCOOQKZ) - 高防服务器|服务器租用|福州高防|广东电信|香港服务器|美国服务器|海外服务器 - 国内靠谱的企业级云计算服务提供商 (sponsored Chinese API server)
-- [找资源](https://zhaoziyuan.pw/) - 阿里云盘资源搜索引擎
+- [找资源](http://zhaoziyuan2.cc/) - 阿里云盘资源搜索引擎
 
 ## Contributors
 
@@ -138,4 +138,4 @@ The `AList` is open-source software licensed under the AGPL-3.0 license.
 
 ---
 
-> [@Blog](https://nn.ci/) · [@GitHub](https://github.com/alist-org) · [@TelegramGroup](https://t.me/alist_chat) · [@Discord](https://discord.gg/F4ymsH4xv2)
+> [@GitHub](https://github.com/alist-org) · [@TelegramGroup](https://t.me/alist_chat) · [@Discord](https://discord.gg/F4ymsH4xv2)

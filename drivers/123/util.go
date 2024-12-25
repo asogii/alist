@@ -1,6 +1,7 @@
 package _123
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"hash/crc32"
@@ -14,7 +15,7 @@ import (
 
 	"github.com/alist-org/alist/v3/drivers/base"
 	"github.com/alist-org/alist/v3/pkg/utils"
-	resty "github.com/go-resty/resty/v2"
+	"github.com/go-resty/resty/v2"
 	jsoniter "github.com/json-iterator/go"
 	log "github.com/sirupsen/logrus"
 )
@@ -25,8 +26,9 @@ const (
 	Api              = "https://www.123pan.com/api"
 	AApi             = "https://www.123pan.com/a/api"
 	BApi             = "https://www.123pan.com/b/api"
+	LoginApi         = "https://login.123pan.com/api"
 	MainApi          = BApi
-	SignIn           = MainApi + "/user/sign_in"
+	SignIn           = LoginApi + "/user/sign_in"
 	Logout           = MainApi + "/user/logout"
 	UserInfo         = MainApi + "/user/info"
 	FileList         = MainApi + "/file/list/new"
@@ -233,15 +235,14 @@ func (d *Pan123) request(url string, method string, callback base.ReqCallback, r
 	return body, nil
 }
 
-func (d *Pan123) getFiles(parentId string, name string) ([]File, error) {
+func (d *Pan123) getFiles(ctx context.Context, parentId string, name string) ([]File, error) {
 	page := 1
 	total := 0
 	res := make([]File, 0)
 	// 2024-02-06 fix concurrency by 123pan
 	for {
-		if !d.APIRateLimit(FileList) {
-			time.Sleep(time.Millisecond * 200)
-			continue
+		if err := d.APIRateLimit(ctx, FileList); err != nil {
+			return nil, err
 		}
 		var resp Files
 		query := map[string]string{
