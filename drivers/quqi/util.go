@@ -300,16 +300,10 @@ func (d *Quqi) linkFromCDN(id string) (*model.Link, error) {
 		bufferReader := bufio.NewReader(decryptReader)
 		bufferReader.Discard(int(decryptedOffset))
 
-		return utils.NewReadCloser(bufferReader, func() error {
-			return nil
-		}), nil
+		return io.NopCloser(bufferReader), nil
 	}
 
 	return &model.Link{
-		Header: http.Header{
-			"Origin": []string{"https://quqi.com"},
-			"Cookie": []string{d.Cookie},
-		},
 		RangeReadCloser: &model.RangeReadCloser{RangeReader: resultRangeReader, Closers: remoteClosers},
 		Expiration:      &expiration,
 	}, nil
